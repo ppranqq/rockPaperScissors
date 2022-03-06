@@ -3,11 +3,11 @@ const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
 
-let computerMove = () => {
+const computerMove = () => {
   //random computer choice
-  let computerMoveNumber = () => Math.floor(Math.random() * 3 + 1);
+  const computerMoveNumber = () => Math.floor(Math.random() * 3 + 1);
 
-  let computerMoveHandler = (computerMoveNumber) => {
+  const computerMoveHandler = (computerMoveNumber) => {
     if (computerMoveNumber === 1) {
       return "Rock";
     } else if (computerMoveNumber === 2) {
@@ -15,13 +15,12 @@ let computerMove = () => {
     } else if (computerMoveNumber === 3) {
       return "Scissors";
     }
-    //do i need put "return;" at this line?
   };
   return computerMoveHandler(computerMoveNumber());
 };
 
 rockBtn.onclick = () => {
-  let move = computerMove();
+  const move = computerMove();
   if (move === "Rock") {
     return console.log("Your move: Rock\nComputer move: " + move + "\nDRAW.");
   } else if (move === "Paper") {
@@ -36,7 +35,7 @@ rockBtn.onclick = () => {
 };
 
 paperBtn.onclick = () => {
-  let move = computerMove();
+  const move = computerMove();
   if (move === "Rock") {
     return console.log(
       "Your move: Paper\nComputer move: " + move + "\nYou WIN."
@@ -51,7 +50,7 @@ paperBtn.onclick = () => {
 };
 
 scissorsBtn.onclick = () => {
-  let move = computerMove();
+  const move = computerMove();
   if (move === "Rock") {
     return console.log(
       "Your move: Scissors\nComputer move: " + move + "\nYou LOST."

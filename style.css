@@ -1,3 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta+Vaani&display=swap");
+
+* {
+  font-family: "Mukta Vaani", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+
+#heading1 {
+  display: flex;
+  justify-content: center;
+  background-color: blanchedalmond;
+  padding-top: 85px;
+  padding-bottom: 85px;
+}
+
+.moves {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  background-color: aquamarine;
+  padding-left: 15px;
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+#computer-move {
+  margin: auto;
+}
+
 #rock {
   width: 100px;
   height: 70px;
@@ -9,4 +43,23 @@
 #scissors {
   width: 100px;
   height: 70px;
+}
+
+.score-names {
+  display: flex;
+  justify-content: center;
+  gap: 44%;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 50%;
+}
+
+.score-board {
+  height: 100vh;
+  padding-top: 100px;
+  background-color: blueviolet;
 }
