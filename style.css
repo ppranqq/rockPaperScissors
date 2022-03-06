@@ -29,17 +29,13 @@
   margin: auto;
 }
 
-#rock {
-  width: 100px;
-  height: 70px;
-}
-#paper {
-  width: 100px;
-  height: 70px;
-}
-#scissors {
-  width: 100px;
-  height: 70px;
+button {
+  text-decoration: none;
+  color: #06070e;
+  background: #cee397;
+  border-radius: 5px;
+  height: 50px;
+  width: 110px;
 }
 
 .score-names {
