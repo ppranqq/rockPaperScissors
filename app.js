@@ -1,11 +1,13 @@
-//query buttons
+//query buttons and score/points
 const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
+
 const computerMoveBtn = document.getElementById("computer-move");
 const playerPoints = document.getElementById("player");
 const computerPoints = document.getElementById("computer");
 
+//function that returns computer move(rock, paper or scissors)
 const computerMove = () => {
   //random computer choice
   const computerMoveNumber = () => Math.floor(Math.random() * 3 + 1);
@@ -22,62 +24,57 @@ const computerMove = () => {
   return computerMoveHandler(computerMoveNumber());
 };
 
+//points counter
+
+let cPoints = 0;
+let pPoints = 0;
+
+//onclicks have same logic
+
 rockBtn.onclick = () => {
   const move = computerMove();
-  //changing html element/computer move DOM
   computerMoveBtn.innerHTML = `${move}`;
 
-  let cPoints = 0;
-
   if (move === "Rock") {
-    cPoints = 0.5;
+    cPoints += 0.5;
+    pPoints += 0.5;
   } else if (move === "Paper") {
-    cPoints = 0;
+    cPoints += 1;
   } else if (move === "Scissors") {
-    cPoints = 1;
+    pPoints += 1;
   }
-  // zbrojiti bodove ***
-  let sumPoints = cPoints;
-
-  computerPoints.innerHTML = `${sumPoints}`;
+  playerPoints.innerHTML = pPoints;
+  computerPoints.innerHTML = cPoints;
 };
 
 paperBtn.onclick = () => {
   const move = computerMove();
-
-  //changing html element/computer move DOM
   computerMoveBtn.innerHTML = `${move}`;
 
   if (move === "Rock") {
-    return console.log(
-      "Your move: Paper\nComputer move: " + move + "\nYou WIN."
-    );
+    pPoints += 1;
   } else if (move === "Paper") {
-    return console.log("Your move: Paper\nComputer move: " + move + "\nDRAW.");
+    cPoints += 0.5;
+    pPoints += 0.5;
   } else if (move === "Scissors") {
-    return console.log(
-      "Your move: Paper\nComputer move: " + move + "\nYou LOST."
-    );
+    cPoints += 1;
   }
+  playerPoints.innerHTML = pPoints;
+  computerPoints.innerHTML = cPoints;
 };
 
 scissorsBtn.onclick = () => {
   const move = computerMove();
-
-  //changing html element/computer move DOM
   computerMoveBtn.innerHTML = `${move}`;
 
   if (move === "Rock") {
-    return console.log(
-      "Your move: Scissors\nComputer move: " + move + "\nYou LOST."
-    );
+    cPoints += 1;
   } else if (move === "Paper") {
-    return console.log(
-      "Your move: Scissors\nComputer move: " + move + "\nYou WIN."
-    );
+    pPoints += 1;
   } else if (move === "Scissors") {
-    return console.log(
-      "Your move: Scissors\nComputer move: " + move + "\nDRAW."
-    );
+    cPoints += 0.5;
+    pPoints += 0.5;
   }
+  playerPoints.innerHTML = pPoints;
+  computerPoints.innerHTML = cPoints;
 };
