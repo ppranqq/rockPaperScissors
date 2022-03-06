@@ -5,15 +5,12 @@
   margin: 0;
   padding: 0;
 }
-html {
-  width: 100%;
-  height: 100%;
-}
 
 #heading1 {
   display: flex;
   justify-content: center;
-  background-color: blanchedalmond;
+  background-color: #121619;
+  color: white;
   padding-top: 85px;
   padding-bottom: 85px;
 }
@@ -22,7 +19,7 @@ html {
   display: flex;
   justify-content: center;
   gap: 15px;
-  background-color: aquamarine;
+  background-color: #09814a;
   padding-left: 15px;
   padding-top: 65px;
   padding-bottom: 65px;
@@ -61,5 +58,5 @@ html {
 .score-board {
   height: 100vh;
   padding-top: 100px;
-  background-color: blueviolet;
+  background-color: #2d4739;
 }
