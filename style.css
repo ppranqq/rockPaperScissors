@@ -26,19 +26,34 @@
 }
 
 #computer-move {
-  margin: auto;
+  display: flex;
+  color: white;
+  background-color: #2d4739;
+  border: 0.5px solid black;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
 }
 
 button {
   text-decoration: none;
-  color: #06070e;
-  background: #cee397;
-  border-radius: 5px;
+  color: #fff;
+  background: rgba(11, 19, 43, 0.616);
+  border: 0;
+  border-radius: 3px;
   height: 50px;
   width: 110px;
 }
 
+.score-board {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #2d4739;
+}
+
 .score-names {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   gap: 44%;
@@ -51,8 +66,10 @@ button {
   gap: 50%;
 }
 
-.score-board {
-  height: 100vh;
-  padding-top: 100px;
-  background-color: #2d4739;
+h3 {
+  font-size: 1.5rem;
+}
+
+.score > span {
+  font-size: 1.5rem;
 }

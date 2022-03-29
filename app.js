@@ -32,49 +32,58 @@ let pPoints = 0;
 //onclicks have same logic
 
 rockBtn.onclick = () => {
-  const move = computerMove();
-  computerMoveBtn.innerHTML = `${move}`;
+  computerMoveBtn.innerHTML = "...";
+  setTimeout(() => {
+    const move = computerMove();
+    computerMoveBtn.innerHTML = `${move}`;
 
-  if (move === "Rock") {
-    cPoints += 0.5;
-    pPoints += 0.5;
-  } else if (move === "Paper") {
-    cPoints += 1;
-  } else if (move === "Scissors") {
-    pPoints += 1;
-  }
-  playerPoints.innerHTML = pPoints;
-  computerPoints.innerHTML = cPoints;
+    if (move === "Rock") {
+      cPoints += 0.5;
+      pPoints += 0.5;
+    } else if (move === "Paper") {
+      cPoints += 1;
+    } else if (move === "Scissors") {
+      pPoints += 1;
+    }
+    playerPoints.innerHTML = pPoints;
+    computerPoints.innerHTML = cPoints;
+  }, 500);
 };
 
 paperBtn.onclick = () => {
-  const move = computerMove();
-  computerMoveBtn.innerHTML = `${move}`;
+  computerMoveBtn.innerHTML = "...";
+  setTimeout(() => {
+    const move = computerMove();
+    computerMoveBtn.innerHTML = `${move}`;
 
-  if (move === "Rock") {
-    pPoints += 1;
-  } else if (move === "Paper") {
-    cPoints += 0.5;
-    pPoints += 0.5;
-  } else if (move === "Scissors") {
-    cPoints += 1;
-  }
-  playerPoints.innerHTML = pPoints;
-  computerPoints.innerHTML = cPoints;
+    if (move === "Rock") {
+      pPoints += 1;
+    } else if (move === "Paper") {
+      cPoints += 0.5;
+      pPoints += 0.5;
+    } else if (move === "Scissors") {
+      cPoints += 1;
+    }
+    playerPoints.innerHTML = pPoints;
+    computerPoints.innerHTML = cPoints;
+  }, 500);
 };
 
 scissorsBtn.onclick = () => {
-  const move = computerMove();
-  computerMoveBtn.innerHTML = `${move}`;
+  computerMoveBtn.innerHTML = "...";
+  setTimeout(() => {
+    const move = computerMove();
+    computerMoveBtn.innerHTML = `${move}`;
 
-  if (move === "Rock") {
-    cPoints += 1;
-  } else if (move === "Paper") {
-    pPoints += 1;
-  } else if (move === "Scissors") {
-    cPoints += 0.5;
-    pPoints += 0.5;
-  }
-  playerPoints.innerHTML = pPoints;
-  computerPoints.innerHTML = cPoints;
+    if (move === "Rock") {
+      cPoints += 1;
+    } else if (move === "Paper") {
+      pPoints += 1;
+    } else if (move === "Scissors") {
+      cPoints += 0.5;
+      pPoints += 0.5;
+    }
+    playerPoints.innerHTML = pPoints;
+    computerPoints.innerHTML = cPoints;
+  }, 500);
 };
