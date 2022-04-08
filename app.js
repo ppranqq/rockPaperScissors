@@ -29,61 +29,52 @@ const computerMove = () => {
 let cPoints = 0;
 let pPoints = 0;
 
-//onclicks have same logic
+//onclicks
+
+const clickMoveHandler = (MOVE_BTN) => {
+  computerMoveBtn.innerHTML = "...";
+  setTimeout(() => {
+    const move = computerMove();
+    computerMoveBtn.innerHTML = `${move}`;
+    //if player move is rock
+    MOVE_BTN === "ROCK"
+      ? move === "Rock"
+        ? null
+        : move === "Paper"
+        ? (cPoints += 1)
+        : (pPoints += 1)
+      : //if player move is paper
+      MOVE_BTN === "PAPER"
+      ? move === "Rock"
+        ? (pPoints += 1)
+        : move === "Paper"
+        ? null
+        : (cPoints += 1)
+      : //if player move is scissors
+        MOVE_BTN ===
+        "SCISSORS"(
+          move === "Rock"
+            ? (cPoints += 1)
+            : move === "Paper"
+            ? (pPoints += 1)
+            : null
+        );
+    playerPoints.innerHTML = pPoints;
+    computerPoints.innerHTML = cPoints;
+  }, 500);
+};
 
 rockBtn.onclick = () => {
-  computerMoveBtn.innerHTML = "...";
-  setTimeout(() => {
-    const move = computerMove();
-    computerMoveBtn.innerHTML = `${move}`;
-
-    if (move === "Rock") {
-      cPoints += 0.5;
-      pPoints += 0.5;
-    } else if (move === "Paper") {
-      cPoints += 1;
-    } else if (move === "Scissors") {
-      pPoints += 1;
-    }
-    playerPoints.innerHTML = pPoints;
-    computerPoints.innerHTML = cPoints;
-  }, 500);
+  const MOVE_BTN = "ROCK";
+  clickMoveHandler(MOVE_BTN);
 };
 
-paperBtn.onclick = () => {
-  computerMoveBtn.innerHTML = "...";
-  setTimeout(() => {
-    const move = computerMove();
-    computerMoveBtn.innerHTML = `${move}`;
-
-    if (move === "Rock") {
-      pPoints += 1;
-    } else if (move === "Paper") {
-      cPoints += 0.5;
-      pPoints += 0.5;
-    } else if (move === "Scissors") {
-      cPoints += 1;
-    }
-    playerPoints.innerHTML = pPoints;
-    computerPoints.innerHTML = cPoints;
-  }, 500);
+rockBtn.onclick = () => {
+  const MOVE_BTN = "ROCK";
+  clickMoveHandler(MOVE_BTN);
 };
 
-scissorsBtn.onclick = () => {
-  computerMoveBtn.innerHTML = "...";
-  setTimeout(() => {
-    const move = computerMove();
-    computerMoveBtn.innerHTML = `${move}`;
-
-    if (move === "Rock") {
-      cPoints += 1;
-    } else if (move === "Paper") {
-      pPoints += 1;
-    } else if (move === "Scissors") {
-      cPoints += 0.5;
-      pPoints += 0.5;
-    }
-    playerPoints.innerHTML = pPoints;
-    computerPoints.innerHTML = cPoints;
-  }, 500);
+rockBtn.onclick = () => {
+  const MOVE_BTN = "ROCK";
+  clickMoveHandler(MOVE_BTN);
 };
